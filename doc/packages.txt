@@ -1,0 +1,12 @@
+Installed packages:
+	terminator
+	emacs
+	openssh-server
+	apache2
+	locate
+	g++
+	nodejs
+	git
+
+	
+

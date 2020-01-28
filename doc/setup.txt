@@ -1,0 +1,15 @@
+# Aliases -> ~/.bash_aliases
+alias ems='emacs -nw'
+
+# Git setup
+git config --global user.email "jorenheit@gmail.com"
+git config --global user.name "Joren Heit"
+
+cd ~/FLL
+git init
+git commit -m "First commit"
+git remote add origin https://github.com/jorenheit/fllreboot/
+git remove -v #verify
+git push origin master
+
+
