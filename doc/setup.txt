@@ -1,15 +1,34 @@
-# Aliases -> ~/.bash_aliases
+## Eduroam:
+WPA2 Enterprise
+PEAP
+No CA cert
+htj@ubboemmius.nl + passwd
+
+## Aliases -> ~/.bash_aliases
 alias ems='emacs -nw'
 
-# Git setup
+## Git setup
 git config --global user.email "jorenheit@gmail.com"
 git config --global user.name "Joren Heit"
 
 cd ~/FLL
-git init
-git commit -m "First commit"
-git remote add origin https://github.com/jorenheit/fllreboot/
-git remove -v #verify
+git clone https://github.com/jorenheit/fllreboot/
+cd fllreboot
+git add .
 git push origin master
 
+## Configure Capslock as CTRL
+# Add to ~/.profile:
+setxkbmap -option ctrl:nocaps
+
+## Move Apache directory
+# 1. Change DocumentRoot in
+/etc/apache2/sites-available/000-default.conf
+# 2. Add to /etc/apache2/apache2.conf
+
+<Directory /home/fllserver/FLL/fllreboot/www/>
+	Options Indexes FollowSymLinks
+	AllowOverride None
+	Require all granted
+</Directory>
 

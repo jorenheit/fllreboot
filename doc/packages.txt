@@ -7,6 +7,8 @@ Installed packages:
 	g++
 	nodejs
 	git
-
-	
+	php
+	libapache2-mod-php
+	php-mysql
+	mysql-server	
 
