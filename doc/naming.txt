@@ -1,0 +1,7 @@
+foldernames
+filenames.ext
+variableNames
+ClassNames
+functionNames()
+CONSTANT_VALUES
+phpurlargs
