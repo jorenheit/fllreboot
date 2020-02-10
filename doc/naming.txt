@@ -1,5 +1,5 @@
 foldernames
-filenames.ext
+file_names.ext
 variableNames
 ClassNames
 functionNames()

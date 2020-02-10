@@ -1,0 +1,6 @@
+{
+    "name": "socket.io-clock-server",
+    "version": "0.1.0",
+    "description": "Drives the clocks",
+    "dependencies": {}
+}

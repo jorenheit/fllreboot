@@ -32,3 +32,6 @@ setxkbmap -option ctrl:nocaps
 	Require all granted
 </Directory>
 
+## To add dependencies to package.json for socket.io
+   npm install express@4.15.2
+   npm install socket.io
