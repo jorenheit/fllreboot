@@ -1,2 +1,5 @@
 #Ignore temporaries
 *~
+
+#Ignore test-folders
+www/html/test/
