@@ -1,2 +1,3 @@
 - move logger() calls to bottom of functions in server.js
 - fix link to socket.io file in clock.php and button.php
+- pass clock html-id as arg to Clock constructor
