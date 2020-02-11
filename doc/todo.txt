@@ -1,0 +1,1 @@
+- move logger() calls to bottom of functions in server.js
