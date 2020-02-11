@@ -1,41 +1,58 @@
 /* 
    Used by clock.php to drive the clock.
-*/
+ */
 
 class Clock
 {
-    constructor(port)
-    {
+    constructor(port){
 	this.socket = io("http://localhost:" + port);
 
 	this.socket.on("start", () => {
-	    this.startClock();
+	    if (!this.running)
+		this.startClock();
 	});
 
 	this.socket.on("stop", () => {
-	    this.stopClock();
+	    if (this.running)
+		this.stopClock();
 	});
 
 	this.socket.on("test", () => {
 	    alert("TEST");
 	});
 
-
 	this.running = false;
-	
-	document.getElementById("clock").innerHTML = "00:00:01";
+	this.setTime(2,30);
     }
 
-    startClock()
-    {
-	this.running = true;
+    startClock(){
 	alert("Start!");
+
+	this.running = true;
     }
 
-    stopClock()
-    {
-	this.running = false;
+    stopClock(){
 	alert("Stop!");
+
+	this.running = false;
+    }
+
+    stringify(num){
+	// num can be a number of minutes or seconds
+	
+	if (num < 0 || num > 60)
+	    num = 0;
+
+	var ret = num.toString();
+	if (num < 10)
+	    ret = "0" + ret;
+
+	return ret;
+    }
+	
+    setTime(min, sec){
+	var timeStr = this.stringify(min) + ":" + this.stringify(sec);
+	document.getElementById("clock").innerHTML = timeStr;
     }
 }
 

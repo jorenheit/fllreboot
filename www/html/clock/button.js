@@ -11,6 +11,6 @@ class Button
 	if (signal != "start" && signal != "stop")
 	    throw "Invalid button type";
 
-	this.socket.emit(signal);
+	this.socket.emit(signal, "button.php");
     }
 }
