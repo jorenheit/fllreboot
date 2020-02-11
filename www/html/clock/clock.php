@@ -28,7 +28,7 @@ $socketio = "http://localhost:" . $port . "/socket.io/socket.io.js";
 
 <html>
     <head>
-	<title>Klok Test</title>
+	<title>Klok</title>
 	<script src=<?php echo $socketio; ?>></script>
 	<script src="clock.js"></script>
 	<link rel="stylesheet" type="text/css" href="clock.css">
@@ -43,5 +43,7 @@ $socketio = "http://localhost:" . $port . "/socket.io/socket.io.js";
 	<script>
 	 var clockObject = new Clock(<?php echo $port; ?>);
 	</script>
+
+	<p id="debug"></p>
     </body>
 </html>

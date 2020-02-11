@@ -33,5 +33,12 @@ setxkbmap -option ctrl:nocaps
 </Directory>
 
 ## To add dependencies to package.json for socket.io
-   npm install express@4.15.2
    npm install socket.io
+
+## Emacs
+package-install web-mode
+
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))

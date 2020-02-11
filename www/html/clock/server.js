@@ -1,5 +1,9 @@
-const port = 3000;
-const server = require("socket.io").listen(port);
+const settings = {
+    PORT: 3000,
+    COUNTDOWN: (0*60 + 3) * 1000 // countdowntime in ms -> (min * 60 + sec) * 1000ms
+};
+
+const server = require("socket.io").listen(settings.PORT);
 
 function logger(msg) {
     var d = new Date();
@@ -14,7 +18,11 @@ server.on("connection", (socket) => {
     
     socket.on("start", (sender) => {
 	logger("start signal received from " + sender + " -> forwarding to clients");
-	socket.broadcast.emit("start", "server");
+
+	var now = new Date();
+	var end = new Date(now.getTime() + settings.COUNTDOWN);
+
+	socket.broadcast.emit("start", end.getTime());
     });
 
     socket.on("stop", (sender) => {
@@ -23,5 +31,5 @@ server.on("connection", (socket) => {
     });
 });
 
-logger("Socket-server started") 
+logger("Socket-server started, listening on port " + settings.PORT) 
 
